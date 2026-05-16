@@ -1,0 +1,112 @@
+.BodyCopyDkBlue {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	line-height: 165%;
+	font-weight: normal;
+}
+.BodyCopySmall {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: italic;
+}
+a:link     {font: normal 11px Arial, Helvetica, sans-serif; color: #ACAA84; text-decoration: none;}
+a:Visited  {font: normal 11px Arial, Helvetica, sans-serif; color: #ACAA84; text-decoration: none;}
+a:Active   {font: normal 11px Arial, Helvetica, sans-serif; color: #ACAA84; text-decoration: underline;}
+a:Hover    {font: normal 11px Arial, Helvetica, sans-serif; color: #ACAA84; text-decoration:underline;}
+.btmlinks a:link     {font: bold 12px Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none;}
+.btmlinks a:Visited  {font: bold 12px Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none;}
+.btmlinks a:Active   {font: bold 12px Arial,Helvetica,sans-serif; color: #ffffff; text-decoration: underline;}
+.btmlinks a:Hover    {font: bold 12px Arial, Helvetica, sans-serif; color: #ffffff; text-decoration:underline;}
+.copylinks a:link     {font: normal 11px Arial, Helvetica, sans-serif; color: #000033; text-decoration: none;}
+.copylinks a:Visited  {font: normal 11px Arial, Helvetica, sans-serif; color: #000033; text-decoration: none;}
+.copylinks a:Active   {font: normal 11px Arial,Helvetica,sans-serif; color: #000033; text-decoration: underline;}
+.copylinks a:Hover    {font: normal 11px Arial, Helvetica, sans-serif; color: #000033; text-decoration:underline;}
+.navlinks a:link     {font: bold 11px Arial, Helvetica, sans-serif; color: #666666; text-decoration: none;}
+.navlinks a:Visited  {font: bold 11px Arial, Helvetica, sans-serif; color: #666666; text-decoration: none;}
+.navlinks a:Active   {font: bold 11px Arial,Helvetica,sans-serif; color: #666666; text-decoration: underline;}
+.navlinks a:Hover    {font: bold 11px Arial, Helvetica, sans-serif; color: #666666; text-decoration:underline;}
+.BodyCopy {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 165%;
+	font-weight: normal;
+	color: #333333;
+}
+.level2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #666666;
+}
+
+h2{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #666666;
+}
+
+.level3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000033;
+	line-height: normal;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+
+}
+.level1 {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #333333;
+}
+td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 125%;
+	font-weight: normal;
+	color: #333333;
+}
+.BodyCopylst {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: normal;
+	font-weight: normal;
+	color: #333333;
+}
+.pageheading {
+	color: #ffffff;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+body{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+table[width='850']>tbody>tr>td:first-child {
+    display: none;
+}
+table[width='850']{
+    width:815;
+}
