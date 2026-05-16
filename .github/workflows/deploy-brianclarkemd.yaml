@@ -1,0 +1,60 @@
+name: Deploy same site to brianclarkemd.com
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-briandclarkemd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out giconsult.github.io
+        uses: actions/checkout@v4
+
+      - name: Prepare site copy
+        run: |
+          rm -rf /tmp/brianclarkemd
+          mkdir -p /tmp/brianclarkemd
+
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='Thumbs.db' \
+            --exclude='ehthumbs.db' \
+            --exclude='Desktop.ini' \
+            --exclude='.DS_Store' \
+            ./ /tmp/brianclarkemd/
+
+          echo "brianclarkemd.com" > /tmp/brianclarkemd/CNAME
+
+      - name: Clone destination repository
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TO_BRIAN_SITE_TOKEN }}
+        run: |
+          rm -rf /tmp/brianclarkemd-repo
+          git clone "https://x-access-token:${DEPLOY_TOKEN}@github.com/giconsult/brianclarkemd.git" /tmp/brianclarkemd-repo
+
+      - name: Replace destination history with current site
+        run: |
+          cd /tmp/brianclarkemd-repo
+
+          # Create a new orphan branch with no prior history.
+          git checkout --orphan new-main
+
+          # Remove all files from the index and working tree.
+          git rm -rf . || true
+
+          # Copy in the prepared site files.
+          rsync -av /tmp/brianclarkemd/ ./
+
+          # Commit the current site as a fresh root commit.
+          git add .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Deploy brianclarkemd.com site"
+
+          # Replace main with this orphan branch and force-push it.
+          git branch -M main
+          git push --force origin main
